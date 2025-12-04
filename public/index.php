@@ -5,7 +5,7 @@ $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Whitelist of allowed HTML files (without extension)
 $allowedPages = ['index', 'menu', 'menu1', 'menu2'];
-echo "EXIT"; exit;
+
 // Serve index.html at root
 if ($requestUri === '/' || $requestUri === '') {
     if (file_exists(__DIR__ . '/index.html')) {

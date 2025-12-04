@@ -1,0 +1,16 @@
+# Enable URL rewriting
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS (handles both direct HTTPS and proxied connections)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTP_HOST} !^localhost
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Don't route index.php to itself (prevent infinite loop)
+RewriteCond %{REQUEST_URI} ^/index\.php$ [NC]
+RewriteRule ^ - [L]
+
+# Route ALL requests through index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
