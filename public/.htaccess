@@ -1,13 +1,12 @@
 # Enable URL rewriting
 RewriteEngine On
 
-# Redirect requests with .html extension to URLs without it
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} ^(.+)\.html$
+# Redirect .html extension to URLs without it (only if requested with .html)
+RewriteCond %{THE_REQUEST} ^[A-Z]+\ /([^.\ ]+)\.html($|\ )
 RewriteRule ^(.+)\.html$ /$1 [R=301,L]
 
 # Serve .html files when URL doesn't have extension
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)$ $1.html [L]
+RewriteRule ^(.+)$ $1.html [L,QSA]
