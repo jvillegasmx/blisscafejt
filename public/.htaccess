@@ -1,16 +1,19 @@
 # Enable URL rewriting
 RewriteEngine On
+RewriteBase /
 
-# Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+# Force HTTPS (handles both direct HTTPS and proxied connections)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTP_HOST} !^localhost
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# Redirect .html extension to URLs without it (only if requested with .html)
-RewriteCond %{THE_REQUEST} ^[A-Z]+\ /([^.\ ]+)\.html($|\ )
-RewriteRule ^(.+)\.html$ https://%{HTTP_HOST}/$1 [R=301,L]
+# Remove .html extension from URL
+RewriteCond %{THE_REQUEST} \s/(.+?)\.html[\s?] [NC]
+RewriteRule ^(.+)\.html$ %{REQUEST_SCHEME}://%{HTTP_HOST}/$1 [R=301,L,NE]
 
-# Serve .html files when URL doesn't have extension
+# Internally add .html to access file
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)$ $1.html [L,QSA]
+RewriteCond %{DOCUMENT_ROOT}/$1\.html -f [NC]
+RewriteRule ^(.+?)/?$ $1.html [L]
