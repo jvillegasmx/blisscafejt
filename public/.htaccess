@@ -1,9 +1,13 @@
 # Enable URL rewriting
 RewriteEngine On
 
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
 # Redirect .html extension to URLs without it (only if requested with .html)
 RewriteCond %{THE_REQUEST} ^[A-Z]+\ /([^.\ ]+)\.html($|\ )
-RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+RewriteRule ^(.+)\.html$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 # Serve .html files when URL doesn't have extension
 RewriteCond %{REQUEST_FILENAME} !-f
