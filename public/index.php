@@ -28,6 +28,7 @@ if (preg_match('/\.html$/', $requestUri)) {
         header("Location: /$cleanUri", true, 301);
         exit;
     } else {
+        echo "EXIT"; exit;
         // Not in whitelist - return 404
         http_response_code(404);
         if (file_exists(__DIR__ . '/404.html')) {
