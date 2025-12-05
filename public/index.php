@@ -53,6 +53,18 @@ if (!pathinfo($requestUri, PATHINFO_EXTENSION) && $requestUri !== '') {
         exit;
     }
 
+    // Special case: Serve menu.pdf directly for menu route
+    if ($requestUri === 'menu') {
+        $pdfFile = __DIR__ . '/menu.pdf';
+        if (file_exists($pdfFile)) {
+            header('Content-Type: application/pdf');
+            header('Content-Disposition: inline; filename="bliss-cafe-menu.pdf"');
+            header('Content-Length: ' . filesize($pdfFile));
+            readfile($pdfFile);
+            exit;
+        }
+    }
+
     $htmlFile = __DIR__ . '/' . $requestUri . '.html';
 
     // Security: Verify the file is within the public directory
