@@ -1,8 +1,3 @@
-<!-- FULL REBUILD: Two Webpages Matching Each PDF Page Exactly -->
-
-<!-- ============================= -->
-<!-- PAGE 1: COFFEE / TEA / SMOOTHIES / AÇAI & YOGURT BOWLS -->
-<!-- ============================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,179 +6,97 @@
   <title>Bliss Café – Menu</title>
 
   <!-- Primary Meta Tags -->
-    <title>Bliss Cafe JT - Premium Coffee & Cafe Experience</title>
-    <meta name="title" content="Bliss Cafe JT - Premium Coffee & Cafe Experience">
-    <meta name="description" content="Bliss Cafe JT offers an exceptional coffee experience with premium beverages, delicious treats, and a cozy atmosphere. Where every sip is pure bliss.">
-    <meta name="keywords" content="bliss cafe, coffee shop, cafe, premium coffee, coffee experience, bliss cafe jt, cafe near me, best coffee">
-    <meta name="author" content="Bliss Cafe JT">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="theme-color" content="#b5cc98">
+  <meta name="title" content="Bliss Cafe JT - Menu">
+  <meta name="description" content="View our menu with premium coffee, smoothies, bowls, and more at Bliss Cafe JT.">
+  <meta name="keywords" content="bliss cafe menu, coffee menu, cafe menu, bliss cafe jt menu">
+  <meta name="author" content="Bliss Cafe JT">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#b5cc98">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://blisscafejt.com/">
-    <meta property="og:title" content="Bliss Cafe JT - Premium Coffee & Cafe Experience">
-    <meta property="og:description" content="Bliss Cafe JT offers an exceptional coffee experience with premium beverages, delicious treats, and a cozy atmosphere. Where every sip is pure bliss.">
-    <meta property="og:image" content="https://blisscafejt.com/share_hero.jpg">
-    <meta property="og:site_name" content="Bliss Cafe JT">
-    <meta property="og:locale" content="en_US">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blisscafejt.com/menu.html">
+  <meta property="og:title" content="Bliss Cafe JT - Menu">
+  <meta property="og:description" content="View our menu with premium coffee, smoothies, bowls, and more at Bliss Cafe JT.">
+  <meta property="og:image" content="https://blisscafejt.com/share_hero.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://blisscafejt.com/">
-    <meta property="twitter:title" content="Bliss Cafe JT - Premium Coffee & Cafe Experience">
-    <meta property="twitter:description" content="Bliss Cafe JT offers an exceptional coffee experience with premium beverages, delicious treats, and a cozy atmosphere. Where every sip is pure bliss.">
-    <meta property="twitter:image" content="https://blisscafejt.com/share_hero.jpg">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://blisscafejt.com/menu.html">
+  <meta property="twitter:title" content="Bliss Cafe JT - Menu">
+  <meta property="twitter:description" content="View our menu with premium coffee, smoothies, bowls, and more at Bliss Cafe JT.">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="/fav.jpg">
-    <link rel="apple-touch-icon" href="/fav.jpg">
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="/fav.jpg">
+  <link rel="apple-touch-icon" href="/fav.jpg">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://blisscafejt.com/">
+  <!-- Redirect to PDF after 1 second -->
+  <meta http-equiv="refresh" content="1;url=menu.pdf">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Inter', sans-serif; background: #FAF7F2; margin:0; padding:30px; color:#000000; }
-    .logo { display:block; margin:0 auto 30px; max-width:200px; }
-    h1 { font-family:'Playfair Display', serif; font-size:2.8rem; text-align:center; margin-bottom:40px; letter-spacing:2px; color:#8B6F47; }
-    .section { margin-bottom:40px; }
-    .section h2 { font-family:'Playfair Display', serif; font-size:2rem; margin-bottom:15px; color:#8B6F47; }
-    .item { margin:8px 0; font-size:1.2rem; }
-    .price { font-weight:600; color:#C17817; margin-left:8px; }
-    .note { font-size:1rem; margin-top:6px; opacity:.8; }
-    .step { color:#C17817; font-weight:600; font-family:'Playfair Display', serif; margin-right:8px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FAF7F2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      padding: 40px;
+    }
+    .logo {
+      max-width: 200px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #8B6F47;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: #8B6F47;
+      color: white;
+      padding: 15px 40px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: background 0.3s;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background: #C17817;
+    }
+    .note {
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
-  <img src="bliss_cafe_dark.png" alt="Bliss Café Logo" class="logo">
-  <div class="section">
-    <h2>COFFEE / TEA</h2>
-    <div class="item">Espresso (double) <span class="price">$4</span></div>
-    <div class="item">Latte <span class="price">$5.5</span></div>
-    <div class="item">Cappuccino <span class="price">$5.5</span></div>
-    <div class="item">Cold Brew <span class="price">$5.5</span></div>
-    <div class="item">Drip Coffee <span class="price">$4</span></div>
-    <div class="item">Mocha <span class="price">$5.5</span></div>
-    <div class="item">Macchiato <span class="price">$5.25</span></div>
-    <div class="item">Americano <span class="price">$5</span></div>
-    <div class="item">Tea (Hot/Iced) <span class="price">$4</span></div>
+  <div class="container">
+    <img src="bliss_cafe_dark.png" alt="Bliss Café Logo" class="logo">
+    <h1>Opening Menu...</h1>
+    <p class="note">If the menu doesn't open automatically, click the button below:</p>
+    <a href="menu.pdf" class="btn" target="_blank">View Menu</a>
   </div>
 
-  <div class="section">
-    <h2>MILK OPTIONS</h2>
-    <div class="item">Whole, non-fat <span class="price">Included</span></div>
-    <div class="item">Almond, Oat, Coconut, Hemp <span class="price">+$.50</span></div>
-  </div>
-
-  <div class="section">
-    <h2>FLAVORS</h2>
-    <div class="item">Vanilla, Caramel, Chocolate, Pumpkin Spice, Hazelnut, Irish Cream, Peppermint, Almond, Sugar-Free Sweetener <span class="price">+$.50</span></div>
-  </div>
-
-  <div class="section">
-    <h2>SMOOTHIES</h2>
-    <div class="item">Cacao Berry <span class="price">$12</span></div>
-    <div class="note">Bananas, strawberries, blueberries, almond milk, cacao, agave, spirulina</div>
-
-    <div class="item">Green Detox <span class="price">$12</span></div>
-    <div class="note">Banana, pineapple, coconut water, spinach, chard, kale, chia seeds, agave</div>
-
-    <div class="item">PB Greek Protein <span class="price">$12</span></div>
-    <div class="note">Peanut butter, banana, almond milk, non-fat Greek yogurt, whey protein</div>
-
-    <div class="item">Island Bliss <span class="price">$12</span></div>
-    <div class="note">Bananas, mango, almond milk, agave</div>
-
-    <div class="item">Perfect Date <span class="price">$12</span></div>
-    <div class="note">Banana, date, strawberries, agave</div>
-
-    <div class="item">Coconut Mango <span class="price">$12</span></div>
-    <div class="note">Banana, coconut milk, mango, agave</div>
-  </div>
-
-  <div class="section">
-    <h2>AÇAI & YOGURT BOWLS</h2>
-    <div class="item">Chia Bliss <span class="price">$12</span></div>
-    <div class="note">Text</div>
-
-    <div class="item">Matcha <span class="price">$12</span></div>
-    <div class="note">Text</div>
-
-    <div class="item">Açai <span class="price">$12</span></div>
-    <div class="note">Text</div>
-
-    <div class="item">Açai w/ Protein <span class="price">$12</span></div>
-    <div class="note">Text</div>
-
-    <div class="item">Pineapple Parfait <span class="price">$12</span></div>
-    <div class="note">Text</div>
-
-    <div class="item">Berry Blend Parfait <span class="price">$12</span></div>
-    <div class="note">Text</div>
-  </div>
-  <div class="section">
-    <h2>SIGNATURE BOWLS</h2>
-    <div class="note">Protein options: chicken, steak, shrimp (+$2), pork, tofu, veggie sausage</div>
-
-    <div class="item">Teriyaki <span class="price">$17</span></div>
-    <div class="note">Protein choice, peppers, onions, rice, teriyaki sauce, sesame seeds</div>
-
-    <div class="item">Mexi-Cali <span class="price">$17</span></div>
-    <div class="note">Protein choice, rice, beans, peppers, pico de gallo, dried corn, feta, al pastor sauce, avocado drizzle</div>
-
-    <div class="item">Mediterranean <span class="price">$17</span></div>
-    <div class="note">Protein choice, rice, hummus, tomatoes, red onions, kalamata olives, taziki, feta, mediterranean drizzle, zest</div>
-
-    <div class="item">Curry <span class="price">$17</span></div>
-    <div class="note">Protein choice, butternut squash, rice, peppers, onions, masala mushrooms, coconut curry sauce, toasted coconut</div>
-
-    <div class="item">Gumbo-wl <span class="price">$17</span></div>
-    <div class="note">Protein choice, rice, beans, veggie sausage, peppers, onions, collard greens, etouffee sauce, crispy onion</div>
-
-    <div class="item">Vegan Bliss <span class="price">$17</span></div>
-    <div class="note">Tofu, sweet potato, rice, beans, collard greens, crispy onions, green goddess</div>
-
-    <div class="item">Brazilian <span class="price">$17</span></div>
-    <div class="note">Steak, rice, beans, peppers, onions, masala mushrooms, tomatoes, dried corn, chimichurri sauce, toasted coconut, zest</div>
-  </div>
-
-  <div class="section">
-    <h2>BUILD YOUR OWN</h2>
-    <div class="item"><span class="step">Step 1:</span>Pick a Base <span class="price">$18</span></div>
-    <div class="note">Rice, beans, collard greens (or choose all 3)</div>
-
-    <div class="item"><span class="step">Step 2:</span>Pick a Sauce (up to 2)</div>
-    <div class="note">Teriyaki, al pastor, avocado drizzle, coconut curry, etouffee, green goddess, chimichurri, taziki, mediterranean drizzle</div>
-
-    <div class="item"><span class="step">Step 3:</span>Pick a Protein</div>
-    <div class="note">Chicken, steak, shrimp (+$2), pork, tofu, veggie sausage (double meat +$5)</div>
-
-    <div class="item"><span class="step">Step 4:</span>Pick Toppings (up to 4)</div>
-    <div class="note">Peppers, onions, pico de gallo, dried corn, feta, hummus, kalamata olives, butternut squash, tomato, masala mushrooms, collard greens, sesame seeds, crispy onions, toasted coconut, zest</div>
-  </div>
-
-  <div class="section">
-    <h2>SALADS & WRAPS</h2>
-
-    <div class="item">Caesar <span class="price">$17</span></div>
-    <div class="note">Protein choice, lettuce, parmesan, croutons, caesar dressing</div>
-
-    <div class="item">Greek <span class="price">$17</span></div>
-    <div class="note">Text</div>
-
-    <div class="item">Beet <span class="price">$17</span></div>
-    <div class="note">Text</div>
-
-    <div class="item">House <span class="price">$17</span></div>
-    <div class="note">Text</div>
-  </div>
-
-
-
-
+  <script>
+    // Immediate redirect as backup
+    window.location.href = 'menu.pdf';
+  </script>
 </body>
 </html>
