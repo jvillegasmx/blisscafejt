@@ -53,9 +53,9 @@ if (!pathinfo($requestUri, PATHINFO_EXTENSION) && $requestUri !== '') {
         exit;
     }
 
-    // Special case: Serve menu.pdf directly for menu route
+    // Special case: Serve menu_cafe.pdf directly for menu route
     if ($requestUri === 'menu') {
-        $pdfFile = __DIR__ . '/menu.pdf';
+        $pdfFile = __DIR__ . '/menu_cafe.pdf';
         if (file_exists($pdfFile)) {
             header('Content-Type: application/pdf');
             header('Content-Disposition: inline; filename="bliss-cafe-menu.pdf"');

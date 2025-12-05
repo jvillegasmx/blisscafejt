@@ -6,5 +6,13 @@ RewriteBase /
 RewriteCond %{REQUEST_URI} ^/index\.php$ [NC]
 RewriteRule ^ - [L]
 
-# Route ALL requests through index.php
+# Don't route existing files (PDFs, images, CSS, JS, etc.)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Don't route existing directories
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Route everything else through index.php
 RewriteRule ^(.*)$ index.php [QSA,L]
