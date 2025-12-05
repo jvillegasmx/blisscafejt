@@ -1,18 +1,1 @@
-# Enable URL rewriting
-RewriteEngine On
-RewriteBase /
 
-# Don't route index.php to itself (prevent infinite loop)
-RewriteCond %{REQUEST_URI} ^/index\.php$ [NC]
-RewriteRule ^ - [L]
-
-# Don't route existing files (PDFs, images, CSS, JS, etc.)
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^ - [L]
-
-# Don't route existing directories
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-
-# Route everything else through index.php
-RewriteRule ^(.*)$ index.php [QSA,L]
